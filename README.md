@@ -1,5 +1,5 @@
 # portafolio-py-mod7
-## Portfolio for Python Full Stack Development Course Module 6 'Django'
+## Portfolio for Python Full Stack Development Course Module 7 'Django with PostgreSQL'
 Student Name: Nicolás Jofré A.
 
 Projects:
