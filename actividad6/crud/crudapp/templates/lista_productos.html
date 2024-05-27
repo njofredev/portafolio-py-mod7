@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+</head>
+<body>
+    <h1>Lista de Productos</h1>
+    <ul>
+        {% for producto in productos %}
+            <li>{{ producto.nombre }} - Precio: {{ producto.precio }} - Cantidad: {{ producto.cantidad }}
+                <a href="{% url 'editar-producto' pk=producto.pk %}">Editar</a>
+                <a href="{% url 'confirmar-eliminacion' pk=producto.pk %}"><button type="submit">Eliminar</button></a> 
+            </li>
+        {% empty %}
+            <li>No hay productos</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'crear-producto' %}">Crear Nuevo Producto</a>
+</body>
+</html>
+
