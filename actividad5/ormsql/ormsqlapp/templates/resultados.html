@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+</head>
+<body>
+    <h1>Resultados del procedimiento almacenado</h1>
+
+    <!-- Formulario para ingresar los argumentos -->
+    <form method="get" action="{% url 'invocar-procedimiento' %}">
+        <label for="argumento1">Argumento 1:</label>
+        <input type="text" id="argumento1" name="argumento1" placeholder="Argumento 1...">
+        <label for="argumento2">Argumento 2:</label>
+        <input type="text" id="argumento2" name="argumento2" placeholder="Argumento 2...">
+        <button type="submit">Invocar Procedimiento</button>
+    </form>
+
+    <!-- Lista de resultados -->
+    <ul>
+        {% for resultado in resultados %}
+            <li>{{ resultado }}</li>
+        {% empty %}
+            <li>No se encontraron resultados</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
