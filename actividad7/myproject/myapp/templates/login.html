@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <h2>Iniciar Sesión</h2>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="username">Nombre de usuario:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password">Contraseña:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Iniciar Sesión">
+    </form>
+</body>
+</html>
